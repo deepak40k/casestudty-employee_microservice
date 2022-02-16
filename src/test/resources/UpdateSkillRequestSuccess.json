@@ -1,0 +1,26 @@
+{
+  "technical": [
+    {
+      "name": "DOCKER",
+      "level": 10
+    },
+    {
+      "name": "HTML-CSS-JAVASCRIPT",
+      "level": 11
+    },
+    {
+      "name": "AWS",
+      "level": 11
+    }
+  ],
+  "nonTechnical": [
+    {
+      "name": "SPOKEN",
+      "level": 5
+    },
+    {
+      "name": "COMMUNICATION",
+      "level": 16
+    }
+  ]
+}

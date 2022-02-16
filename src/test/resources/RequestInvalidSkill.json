@@ -1,0 +1,28 @@
+{
+  "associateId": "CT12345",
+  "name": "name1",
+  "email": "dummyemail1@abc.com",
+  "mobile": "0681234567",
+  "skills": {
+    "technical": [
+      {
+        "name": "DOCKER1",
+        "level": 20
+      },
+      {
+        "name": "HTML-CSS-JAVASCRIPT",
+        "level": 11
+      }
+    ],
+    "nonTechnical": [
+      {
+        "name": "SPOKEN",
+        "level": 5
+      },
+      {
+        "name": "COMMUNICATION",
+        "level": 16
+      }
+    ]
+  }
+}
