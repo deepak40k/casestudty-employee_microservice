@@ -13,6 +13,7 @@ import java.io.Serializable;
 
 @Setter
 @Getter
+@ToString
 @DynamoDBDocument
 public class Skill implements Serializable {
     static final long serialVersionUID = 1L;

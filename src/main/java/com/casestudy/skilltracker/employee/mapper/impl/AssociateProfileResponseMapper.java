@@ -18,32 +18,6 @@ public class AssociateProfileResponseMapper implements DTOMapper<AssociateProfil
     @Override
     public AssociateProfile mapToEntity(AssociateProfileResponse associateProfileResponse) {
         throw new RuntimeException("Mapping not allowed");
-      /*  List<Skill> skills = new ArrayList<>();
-        if (associateProfileResponse.getSkills() != null) {
-            if (associateProfileResponse.getSkills().getTechnical() != null) {
-                List<Skill> technicalSkills = associateProfileResponse.getSkills().getTechnical();
-                technicalSkills.forEach(
-                        x -> x.setType("Technical")
-                );
-                skills.addAll(technicalSkills);
-            }
-            if (associateProfileResponse.getSkills().getNonTechnical() != null) {
-                List<Skill> nonTechnicalSkills = associateProfileResponse.getSkills().getNonTechnical();
-                nonTechnicalSkills.forEach(
-                        x -> x.setType("NonTechnical")
-                );
-                skills.addAll(nonTechnicalSkills);
-            }
-        }
-        AssociateProfile associateProfile =new AssociateProfile();
-        associateProfile.setUserId(associateProfileResponse.getUserId());
-        associateProfile.setAssociateId(associateProfileResponse.getAssociateId());
-        associateProfile.setEmail(associateProfileResponse.getEmail());
-        associateProfile.setName(associateProfileResponse.getName());
-        associateProfile.setMobile(associateProfileResponse.getMobile());
-        associateProfile.setSkills(skills);
-        log.debug("Mapped AssociateProfile:"+associateProfile);
-        return associateProfile;*/
     }
 
     @Override

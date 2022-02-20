@@ -6,6 +6,7 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class ErrorResponse {
     private int code;
     private String message;

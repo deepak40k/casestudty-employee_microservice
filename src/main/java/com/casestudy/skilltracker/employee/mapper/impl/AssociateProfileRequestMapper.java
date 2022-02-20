@@ -46,21 +46,6 @@ public class AssociateProfileRequestMapper implements DTOMapper<AssociateProfile
 
     @Override
     public AssociateProfileRequest mapToDto(AssociateProfile associateProfile) {
-        /*AssociateProfileRequest associateProfileRequest = new AssociateProfileRequest();
-        associateProfileRequest.setUserId(associateProfile.getUserId());
-        associateProfileRequest.setAssociateId(associateProfile.getAssociateId());
-        associateProfileRequest.setEmail(associateProfile.getEmail());
-        associateProfileRequest.setName(associateProfile.getName());
-        associateProfileRequest.setMobile(associateProfile.getMobile());
-        List<Skill> skills = associateProfile.getSkills();
-        List<Skill> technicalSkills = skills.stream().
-                filter(x -> x.getType().equals("Technical")).collect(Collectors.toList());
-        List<Skill> nonTechnicalSkills = skills.stream().
-                filter(x -> x.getType().equals("NonTechnical")).collect(Collectors.toList());
-        SkillSet skillSet = new SkillSet(technicalSkills, nonTechnicalSkills);
-        associateProfileRequest.setSkills(skillSet);
-        log.debug("Mapped associateProfileRequest:"+associateProfileRequest);
-        return associateProfileRequest;*/
         throw new RuntimeException("Mapping not allowed");
     }
 }

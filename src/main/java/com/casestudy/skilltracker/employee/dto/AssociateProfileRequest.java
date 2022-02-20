@@ -4,6 +4,7 @@ import com.casestudy.skilltracker.employee.model.SkillSet;
 import com.casestudy.skilltracker.employee.validator.AssociateID;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
@@ -13,6 +14,7 @@ import javax.validation.constraints.Size;
 @Setter
 @Getter
 @Valid
+@ToString
 public class AssociateProfileRequest {
     static final long serialVersionUID = 1L;
     private String userId;

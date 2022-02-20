@@ -12,6 +12,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class SkillSet implements Serializable {
     @Valid
     private List<Skill> technical=new ArrayList<>();

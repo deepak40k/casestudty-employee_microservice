@@ -3,12 +3,14 @@ package com.casestudy.skilltracker.employee.dto;
 import com.casestudy.skilltracker.employee.model.SkillSet;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 import javax.validation.Valid;
 
 @Getter
 @Valid
 @Builder
+@ToString
 public class AssociateProfileResponse {
     static final long serialVersionUID = 1L;
     private String userId;

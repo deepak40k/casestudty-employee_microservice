@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/server
+    destination: /home/ec2-user/app
 hooks:
-  BeforeInstall:
+  ApplicationStart:
     - location: start_app.sh
       timeout: 300
       runas: root

@@ -30,18 +30,20 @@ public class ProfileController {
     @PostMapping(value = "/engineer/profile", consumes = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<AssociateProfileResponse> save(@Valid @RequestBody final AssociateProfileRequest associateProfile) {
-        log.debug("Create request body: " + associateProfile);
+        log.info("Received create profile request : {}",associateProfile.toString());
         AssociateProfileResponse response = profileService.save(associateProfile);
         rabbitMqSender.send(response);
+        log.debug("Response : {}",response.toString());
         return new ResponseEntity(response, HttpStatus.OK);
     }
 
     @PutMapping(value = "/engineer/profile/{userId}/skills", consumes = {MediaType.APPLICATION_JSON_VALUE})
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<AssociateProfileResponse> update(@PathVariable String userId, @Valid @NotNull @RequestBody final SkillSet skillSet) {
-        log.debug("Update request body: " + skillSet + " for userId: " + userId);
+        log.info("Received update profile request for user id : {} is : {}",userId,skillSet.toString());
         AssociateProfileResponse response = profileService.update(userId, skillSet);
         rabbitMqSender.send(response);
+        log.debug("Response : {}",response.toString());
         return new ResponseEntity(response, HttpStatus.OK);
     }
 }

@@ -33,11 +33,10 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public AssociateProfileResponse save(AssociateProfileRequest associateProfileRequest) {
         if (associateProfileRepository.existsById(associateProfileRequest.getAssociateId())) {
-            log.error("User Already Exists:" + associateProfileRequest.getAssociateId());
+            log.error("User Already Exists:{}",associateProfileRequest.getAssociateId());
             throw new ValidationException("User Already Exists:" + associateProfileRequest.getAssociateId());
         }
         AssociateProfile associateProfile=requestMapper.mapToEntity(associateProfileRequest);
-        associateProfile.setLastModifiedDate(new Date());
         associateProfile = associateProfileRepository.save(associateProfile);
         return responseMapper.mapToDto(associateProfile);
     }
@@ -46,19 +45,18 @@ public class ProfileServiceImpl implements ProfileService {
     public AssociateProfileResponse update(String userid, SkillSet skillSet) {
         Optional<AssociateProfile> oAssociateProfile = associateProfileRepository.findAssociateByUserId(userid);
         if (!oAssociateProfile.isPresent()) {
-            log.error("User Id Not Found:" + userid);
+            log.error("User Id Not Found:{}",userid);
             throw new UserNotFoundException("User Id Not Found:" + userid);
         }
         AssociateProfile associateProfile = oAssociateProfile.get();
         if (!associateProfile.getLastModifiedDate().before(DateUtility.getDateBeforeDays(10))) {
-            log.error("Update of profile must be allowed only after 10 days of adding profile or last change:" + userid);
+            log.error("Update of profile must be allowed only after 10 days of adding profile or last change for user id:{}",userid);
             throw new ValidationException("Update of profile must be allowed only after 10 days of adding profile or last change:"
                     + userid);
         }
         List<Skill> existingSkills = associateProfile.getSkills();
         existingSkills = addSkills(existingSkills, skillSet);
         associateProfile.setSkills(existingSkills);
-        associateProfile.setLastModifiedDate(new Date());
         associateProfile = associateProfileRepository.save(associateProfile);
         return responseMapper.mapToDto(associateProfile);
     }
